@@ -3,7 +3,7 @@
   height: 100vh;
 }
 
-#page-give-classes .page-header .header-content {
+#page-give-classes .header-content {
   margin-bottom: 6.4rem;
 }
 
@@ -18,11 +18,14 @@
 
 #page-give-classes fieldset {
   border: none;
-  padding: 0 2.4rem;
+}
+
+#page-give-classes main {
+  padding: 6.5rem;
 }
 
 #page-give-classes fieldset legend {
-  font: 700 2.4rem Archivo;
+  font: 700 2rem Archivo;
   color: var(--color-text-title);
   margin-bottom: 2.4rem;
   display: flex;
@@ -34,15 +37,16 @@
 }
 
 #page-give-classes fieldset legend button {
-  background: none;
+  background-color: none;
   border: 0;
   color: var(--color-primary);
   font: 700 1.6rem Archivo;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.2;
 }
 
 #page-give-classes fieldset legend button:hover {
+  transform: translateY(-5px);
   color: var(--color-primary-dark);
 }
 
@@ -50,9 +54,12 @@
   margin-top: 6.4rem;
 }
 
-#page-give-classes .input-block + .input-block,
-#page-give-classes .input-block + .textarea-block,
-#page-give-classes .select-block + .input-block {
+/*DUVIDA AQUI: SE ESTIVER UM 3 ELEMENTO ELE VAI PEGAR AS DEFINIÇÕES TAMBÉM? */
+
+#page-give-classes .input-block+.input-block, /*pega o input-block que vem logo depois de outro input-block*/
+#page-give-classes .textarea-block+.textarea-block, /*pega um textarea que vem após outro text-area*/
+#page-give-classes .select-block+.input-block {
+  /*pega um input-block que anterior a ele tem um select-block*/
   margin-top: 2.4rem;
 }
 
@@ -79,9 +86,9 @@
 #page-give-classes main footer button {
   width: 100%;
   height: 5.6rem;
-  background: var(--color-secondary);
+  background-color: var(--color-secondary);
   color: var(--color-button-text);
-  border: 0;
+  border: none;
   border-radius: 0.8rem;
   cursor: pointer;
   font: 700 1.6rem Archivo;
@@ -93,41 +100,44 @@
   margin-top: 3.2rem;
 }
 
-#page-give-classes main footer button:hover {
-  background: var(--color-secondary-dark);
-}
-
-.schedule-item + schedule-item {
+.schedule-item + .schedule-item {
   margin-top: 3.2rem;
   padding-top: 3.2rem;
   border-top: 1px solid var(--color-line-in-white);
 }
 
-@media (min-width: 700px) {
+@media screen and (min-width: 700px) {
   #page-give-classes #container {
     max-width: 100vw;
   }
+
   #page-give-classes .page-header .header-content {
     margin-bottom: 0;
   }
+
   #page-give-classes main fieldset {
     padding: 0 64px;
   }
+
   .schedule-item {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    column-gap: 1.6rem;
+    column-gap: 1.6rem; /*espaço entre colunas*/
   }
-  #page-give-classes #schedule-items .select-block + .input-block,
-  #page-give-classes #schedule-items .input-block + .input-block {
+
+  #page-give-classes #schedule-id .select-block + .input-block,
+  #page-give-classes #schedule-id .input-block + .input-block {
     margin-top: 0;
   }
+
   #page-give-classes main footer {
     padding: 40px 64px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
+
   #page-give-classes main footer button {
     margin-top: 0;
     width: 200px;
